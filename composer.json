@@ -1,0 +1,17 @@
+{
+    "name": "basalam/auth",
+    "description": "With using this package, developers can implement login to BaSalam services more easily.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BaSalam\\Auth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "S.MJavad Alavi",
+            "email": "mohammadjavad.alavi@basalam.com"
+        }
+    ],
+    "require": {}
+}
