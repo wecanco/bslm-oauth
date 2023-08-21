@@ -27,6 +27,6 @@ return [
 
         'sso_url'       =>  '/accounts/sso',
         'token_url'     =>  '/oauth/token',
-        'who_ami_url'    =>  '/whoami',
+        'who_ami_url'   =>  '/whoami',
     ],
 ];

@@ -84,6 +84,7 @@ class BaSalamAuthController extends Controller
                     'name'          => $currentUser->name
                 ]);
 
+                //TODO write by response
                 $userToken = new RefreshToken(
                     [
                         'token'     => $token->token,
