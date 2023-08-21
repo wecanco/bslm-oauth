@@ -12,7 +12,7 @@
 
 to install this package use blew command:
 
-`composer require/installl basalm/auth`
+`composer require/installl basalam-auth/auth`
 
 ### Usage
 
