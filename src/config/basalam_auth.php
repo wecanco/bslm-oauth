@@ -1,12 +1,6 @@
 <?php
 
 return [
-    'scopes'        =>  [
-        "user.read",
-        "user.write",
-        "vendor.read",
-        "vendor.write",
-    ],
 
     'redirect_uri'  =>  'https://domain.com/token',
     'client_id'     =>  '54623',
@@ -24,6 +18,7 @@ return [
         'platform_core_V1_user'            => '/api_v1.0/user',
         'platform_core_V1_vendor'          => '/api_v1.0/vendor',
         'platform_core_V1_get_user_by_ids' => '/api_v1.0/user/get-by-ids/',
+        'platform_core_V1_refresh_token'   => '/refresh-token',
 
         'sso_url'       =>  '/accounts/sso',
         'token_url'     =>  '/oauth/token',

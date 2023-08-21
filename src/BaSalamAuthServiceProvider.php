@@ -19,8 +19,7 @@ class BaSalamAuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadRoutesFrom(__DIR__ . '/routes/api.php');
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->mergeConfigFrom(__DIR__ . '/config/ba_salam_auth.php', 'ba_salam_auth');
-        $this->publishes([__DIR__ . '/config/ba_salam_auth.php' => config_path("ba_salam_auth.php")]);
+        $this->mergeConfigFrom(__DIR__ . '/config/basalam_auth.php', 'ba_salam_auth');
+        $this->publishes([__DIR__ . '/config/basalam_auth.php' => config_path("basalam_auth.php")]);
     }
 }
