@@ -1,5 +1,5 @@
 {
-    "name": "basalam-auth /auth",
+    "name": "basalam-auth/auth",
     "description": "With using this package, developers can implement login to BaSalam services more easily.",
     "license": "MIT",
     "autoload": {
