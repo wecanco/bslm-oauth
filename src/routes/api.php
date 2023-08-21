@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace'=>'BaSalam\Auth\Http\Controllers'], function (){
+Route::group(['prefix' => 'auth', 'namespace'=>'BaSalam\Auth\Http\Controllers'], function (){
 
     Route::get('get-access', 'BaSalamAuthController@userAccess')
         ->name('ba-salam-auth.user_access');
@@ -21,8 +21,8 @@ Route::group(['namespace'=>'BaSalam\Auth\Http\Controllers'], function (){
     Route::get('token-verify', 'BaSalamAuthController@tokenVerify')
         ->name('ba-salam-auth.token_verify');
 
-    Route::get('token', 'BaSalamAuthController@token')
-        ->name('ba-salam-auth.token');
+    Route::get('callback', 'BaSalamAuthController@callback')
+        ->name('ba-salam-auth.callback');
 
     Route::get('refresh-token', 'BaSalamAuthController@refreshToken')
         ->name('ba-salam-auth.refresh_token');

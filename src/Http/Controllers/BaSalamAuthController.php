@@ -55,12 +55,12 @@ class BaSalamAuthController extends Controller
 
     }
 
-    public function token(Request $request)
+    public function callback(Request $request)
     {
         $validate = $request->validate(
           [
               'code'=>'required,integer',
-              'state'=>'required,integer,min:12,max:12'
+              'state'=>'required,integer,min:11,max:12'
           ]
         );
 
