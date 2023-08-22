@@ -5,7 +5,6 @@ return [
     'redirect_uri'  =>  'https://domain.com/token',
     'client_id'     =>  '54623',
     'client_secret' =>  '54623',
-    'state'         =>  '2135',
 
     'url' => [
         'platform_core' => 'https://core.basalam.com',

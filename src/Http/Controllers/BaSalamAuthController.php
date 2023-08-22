@@ -18,11 +18,12 @@ class BaSalamAuthController extends Controller
     {
         $validate = $request->validate(
             [
-                'scopes'=>'required,array'
+                'scopes'=>'required,array',
+                'state'=>'required'
             ]
         );
 
-        return response()->redirectTo($this->baSalamAuth->createAccessUrl($request->input('scopes')));
+        return response()->redirectTo($this->baSalamAuth->createAccessUrl($request->input('scopes'), $request->input('state')));
     }
 
     public function callback(Request $request)

@@ -7,21 +7,19 @@ use GuzzleHttp\Client;
 class BaSalamAuth
 {
     private string $redirect_uri;
-    private string $state;
     private string $client_id;
     private string $client_secret;
 
     public function __construct()
     {
         $this->redirect_uri = config('ba_salam_auth.redirect_uri');
-        $this->state = config('ba_salam_auth.state');
         $this->client_id = config('ba_salam_auth.client_id');
         $this->client_secret = config('ba_salam_auth.client_secret');
     }
 
-    public function createAccessUrl(array $scopes): string
+    public function createAccessUrl(array $scopes, $state): string
     {
-        return config("ba_salam_auth.url.base_url") + config('ba_salam_auth.route.sso_url')."client_id=".config('ba_salam_auth.client_id').'&scopes='.implode(" ", $scopes)."&redirect_uri".$this->redirect_uri."&state=".$this->state;
+        return config("ba_salam_auth.url.base_url") + config('ba_salam_auth.route.sso_url')."client_id=".config('ba_salam_auth.client_id').'&scopes='.implode(" ", $scopes)."&redirect_uri".$this->redirect_uri."&state=".$state;
     }
 
     public function getToken($code)
