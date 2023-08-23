@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'auth', 'namespace'=>'BaSalam\Auth\Http\Controllers'], function (){
 
     Route::get('get-access', 'BaSalamAuthController@userAccess')
-        ->name('ba-salam-auth.user_access');
+        ->name('basalam_auth.user_access');
 
     Route::get('callback', 'BaSalamAuthController@callback')
-        ->name('ba-salam-auth.callback');
+        ->name('basalam-auth.callback');
 });
 

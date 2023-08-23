@@ -3,6 +3,7 @@
 namespace BaSalam\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use BaSalam\Auth\Models\Callback;
 use BaSalam\Auth\Services\BaSalamAuth;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,13 @@ class BaSalamAuthController extends Controller
         if(!$token){
             return response()->json(['data' => ['error'=>['token'=>'error get token']], 403]);
         }else{
-            return response()->json(['data'=>[$token->getBody(), $request->all()]]);
+
+            $callback = new Callback([
+                'user_id' => $request->input("state"),
+                'data' => [$token->getBody(), $request->all()]
+            ]);
+
+            return response()->redirectTo(config('basalam_auth.app_url'))->with($callback->id);
         }
     }
 }

@@ -3,6 +3,7 @@
 namespace BaSalam\Auth\Services;
 
 use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
 
 class BaSalamAuth
 {
@@ -12,14 +13,14 @@ class BaSalamAuth
 
     public function __construct()
     {
-        $this->redirect_uri = config('ba_salam_auth.redirect_uri');
-        $this->client_id = config('ba_salam_auth.client_id');
-        $this->client_secret = config('ba_salam_auth.client_secret');
+        $this->redirect_uri = config('basalam_auth.redirect_uri');
+        $this->client_id = config('basalam_auth.client_id');
+        $this->client_secret = config('basalam_auth.client_secret');
     }
 
     public function createAccessUrl(array $scopes, $state): string
     {
-        return config("ba_salam_auth.url.base_url") + config('ba_salam_auth.route.sso_url')."client_id=".config('ba_salam_auth.client_id').'&scopes='.implode(" ", $scopes)."&redirect_uri".$this->redirect_uri."&state=".$state;
+        return config("basalam_auth.url.base_url") + config('basalam_auth.route.sso_url')."client_id=".config('basalam_auth.client_id').'&scopes='.implode(" ", $scopes)."&redirect_uri".$this->redirect_uri."&state=".$state;
     }
 
     public function getToken($code)
@@ -32,10 +33,10 @@ class BaSalamAuth
             "code" => $code
         ];
 
-        return $this->request(config("ba_salam_auth.url.auth_api"), config("ba_salam_auth.route.token_url"), $data);
+        return $this->request(config("basalam_auth.url.auth_api"), config("basalam_auth.route.token_url"), $data);
     }
 
-    private function request($baseUrl, $route, $data, $requestedHeaders = null)
+    private function request($baseUrl, $route, $data, $requestedHeaders = null): ResponseInterface
     {
         $client = new Client([
             'timeout' => 15,

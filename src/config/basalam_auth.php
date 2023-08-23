@@ -2,7 +2,8 @@
 
 return [
 
-    'redirect_uri'  =>  'https://domain.com/token',
+    'app_url'       =>  'app_url',
+    'redirect_uri'  =>  config('APP_URL').'/token',
     'client_id'     =>  '54623',
     'client_secret' =>  '54623',
 
