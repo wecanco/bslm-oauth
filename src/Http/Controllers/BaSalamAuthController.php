@@ -20,7 +20,7 @@ class BaSalamAuthController extends Controller
     {
         $validate = $request->validate(
             [
-                'scopes'=>'required,array',
+                'scopes'=>'required|array',
                 'state'=>'required'
             ]
         );
