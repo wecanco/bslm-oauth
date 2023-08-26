@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use BaSalam\Auth\Models\Callback;
 use BaSalam\Auth\Services\BaSalamAuth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class BaSalamAuthController extends Controller
 {
@@ -24,7 +25,7 @@ class BaSalamAuthController extends Controller
             ]
         );
 
-        return response()->redirectTo($this->baSalamAuth->createAccessUrl($request->input('scopes'), $request->input('state')));
+        return Redirect::to($this->baSalamAuth->createAccessUrl($request->input('scopes'), $request->input('state')));
     }
 
     public function callback(Request $request)
