@@ -20,7 +20,7 @@ class BaSalamAuth
 
     public function createAccessUrl(array $scopes, $state): string
     {
-        return config("basalam_auth.url.base_url") + config('basalam_auth.route.sso_url')."client_id=".config('basalam_auth.client_id').'&scopes='.implode(" ", $scopes)."&redirect_uri".$this->redirect_uri."&state=".$state;
+        return config("basalam_auth.url.base_url") . config('basalam_auth.route.sso_url')."?client_id=".config('basalam_auth.client_id').'&scopes='.implode(" ", $scopes)."&redirect_uri=".$this->redirect_uri."&state=".$state;
     }
 
     public function getToken($code)
