@@ -32,8 +32,7 @@ class BaSalamAuthController extends Controller
     {
         $validate = $request->validate(
           [
-              'code'=>'required,integer',
-              'state'=>'required,integer,min:11,max:12'
+              'code'=>'required,integer'
           ]
         );
 
@@ -44,7 +43,6 @@ class BaSalamAuthController extends Controller
         }else{
 
             $callback = new Callback([
-                'user_id' => $request->input("state"),
                 'data' => [$token->getBody(), $request->all()]
             ]);
 
