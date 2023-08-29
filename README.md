@@ -1,5 +1,5 @@
  
-# baSalam-auth
+# bslm-oauth
 ## Work flow
 
 - installation
